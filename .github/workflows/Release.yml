@@ -230,6 +230,7 @@ jobs:
       - name: Upx compress binary
         run: upx target/${{ matrix.platform.target }}/release/aliyundrive-webdav
       - name: Upload binary artifacts
+        if: always()
         uses: actions/upload-artifact@v2
         with:
           name: ${{ matrix.platform.target }}-bin
